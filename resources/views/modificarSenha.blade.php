@@ -2,7 +2,7 @@
 
 
 
-<form action="{{ route('modify') }}" method="post">
+<form action="" method="post">
     @csrf
     <input type="text" name="novaSenha" placeholder="Nova senha">
     <br>
