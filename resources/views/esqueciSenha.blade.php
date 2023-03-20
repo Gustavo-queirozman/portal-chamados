@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="col-md-2 col-lg-6 col-xl-4 offset-xl-1   justify-content-center">
-                    <form action="{{ route('esqueci-senha') }}" method="post">
+                    <form action="{{ route('modify') }}" method="post">
                         <div class="form-outline mb-4">
                             <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Email" required />
                         </div>

@@ -14,14 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('entrar');
 });
 
 
 
-Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
-Route::post('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
-
+//Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
+//Route::post('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
 
 Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('login');
 Route::post('/entrar', [App\Http\Controllers\EntrarController::class, 'login'])->name('login');
