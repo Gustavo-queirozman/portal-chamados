@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./css/login.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <title>Login</title>
+    <title>Entrar</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
                     <img src="https://giu.unimed.coop.br/img/thumbnail_2-01.d1fca7ec.jpg" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form action="{{ route('login') }}" method="post">
+                    <form action="{{ route('entrar') }}" method="post">
                         @csrf
                         <div class="form-outline mb-4">
                             <input type="text" id="usuario" name="usuario" class="form-control form-control-lg" placeholder="Usuário" required value="{{ old('usuario') }}" />
@@ -39,7 +39,7 @@
                                 <p>
                                     <a href="/esqueci-senha" class="text-decoration-none text-dark">Esqueci minha
                                         senha </a>
-                                    <a href="/register" class="text-decoration-none text-dark">| Solicitar
+                                    <a href="/cadastro" class="text-decoration-none text-dark">| Solicitar
                                         cadastro</a>
                                 </p>
                             </div>

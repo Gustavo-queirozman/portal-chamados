@@ -22,17 +22,17 @@ Route::get('/', function () {
 //Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
 //Route::post('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
 
-Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('login');
-Route::post('/entrar', [App\Http\Controllers\EntrarController::class, 'login'])->name('login');
+Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('entrar');
+Route::post('/entrar', [App\Http\Controllers\EntrarController::class, 'entrar'])->name('entrar');
 
-Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('register');
-Route::post('/cadastro', [App\Http\Controllers\CadastroController::class, 'solicitarCadastro'])->name('register');
+Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
+Route::post('/cadastro', [App\Http\Controllers\CadastroController::class, 'solicitarCadastro'])->name('cadastro');
 
-Route::get('/mudar-senha', [App\Http\Controllers\MudarSenhaController::class, 'index']);
-Route::post('/mudar-senha', [App\Http\Controllers\MudarSenhaController::class, 'mudarSenha']);
+Route::get('/mudar-senha', [App\Http\Controllers\MudarSenhaController::class, 'index'])->name('mudarSenha');
+Route::post('/mudar-senha', [App\Http\Controllers\MudarSenhaController::class, 'mudarSenha'])->name('mudarSenha');
 
-Route::get('/esqueci-senha', [App\Http\Controllers\EsqueciSenhaController::class, 'index']);
-Route::post('/esqueci-senha', [App\Http\Controllers\EsqueciSenhaController::class, 'enviarNovaSenhaNoEmail']);
+Route::get('/esqueci-senha', [App\Http\Controllers\EsqueciSenhaController::class, 'index'])->name('esqueciSenha');
+Route::post('/esqueci-senha', [App\Http\Controllers\EsqueciSenhaController::class, 'enviarNovaSenhaNoEmail'])->name('esqueciSenha');
 
 //Route::get('/esqueci-senha', [App\Http\Controllers\PasswordController::class, 'esqueciSenha'])->name('esqueciSenha');
 //Route::post('/esqueci-senha', [App\Http\Controllers\PasswordController::class, 'esqueciSenha'])->name('esqueciSenha');

@@ -1,7 +1,7 @@
 <!--
 <h1>Cadastrar usuário</h1>
 
-<form action="{{ route('register')}}" method="post">
+<form action="{{ route('cadastro')}}" method="post">
     @csrf
     <input type="text" name="usuario" placeholder="Usuário" value="{{old('usuario')}}">
     <br>
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form action="{{ route('register')}}" method="post">
+                    <form action="{{ route('cadastro')}}" method="post">
                         @csrf
                         <div class="form-outline mb-4">
                             <input type="text" id="nome" name="nome" class="form-control form-control-lg" placeholder="Nome" required value="{{ old('nome') }}" />

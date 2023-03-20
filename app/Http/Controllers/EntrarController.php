@@ -8,11 +8,11 @@ class EntrarController extends Controller
 {
     public function index(Request $request){
         $erro = $request->get('erro');
-        return view('login');
+        return view('entrar');
         //return view('login', ['erro' => $erro]);
     }
 
-    public function login(Request $request){
+    public function entrar(Request $request){
         $regras = [
             'usuario' => 'required',
             'senha' => 'required'

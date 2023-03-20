@@ -27,7 +27,8 @@
                 </div>
 
                 <div class="col-md-2 col-lg-6 col-xl-4 offset-xl-1   justify-content-center">
-                    <form action="{{ route('modify') }}" method="post">
+                    <form action="{{ route('esqueci-senha') }}" method="post">
+                        @csrf
                         <div class="form-outline mb-4">
                             <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Email" required />
                         </div>
@@ -39,8 +40,8 @@
                             <br><br>
                             <div class="d-flex justify-content-center align-items-cente text-center">
                                 <p>
-                                    <a href="/login" class="text-decoration-none text-dark">Acessar minha conta</a>
-                                    <a href="/register" class="text-decoration-none text-dark"> | Solicitar cadastro</a>
+                                    <a href="/entrar" class="text-decoration-none text-dark">Acessar minha conta</a>
+                                    <a href="/cadastro" class="text-decoration-none text-dark"> | Solicitar cadastro</a>
                                 </p>
                             </div>
                         </div>

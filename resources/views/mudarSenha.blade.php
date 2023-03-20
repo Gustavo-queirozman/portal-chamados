@@ -1,15 +1,11 @@
 <h1>Modificar senha</h1>
-
-
-
-<form action="" method="post">
+<form action="{{ route('mudar') }}" method="post">
     @csrf
     <input type="text" name="novaSenha" placeholder="Nova senha">
     <br>
     <input type="text" name="confirmarSenha" placeholder="Confirmar nova senha">
     <br>
     <input type="submit" value="Modificar">
-
 </form>
 
 <style>

@@ -11,7 +11,7 @@ class CadastroController extends Controller
 {
     public function index()
     {
-        return view('register');
+        return view('cadastro');
     }
 
     public function solicitarCadastro(Request $request)
@@ -47,16 +47,16 @@ class CadastroController extends Controller
             ->orWhere('usuario', $usuario)->get();
 
         if (str_contains($dados, $usuario)) {
-            redirect()->route('register');
+            redirect()->route('cadastro');
             echo "Não é possível efetuar o cadastro pois o nome de usuário já está em uso";
         } elseif (str_contains($dados, $email)) {
-            redirect()->route('register');
+            redirect()->route('cadastro');
             echo "Não é possível efetuar o cadastro pois o email já está em uso";
         }
 
         $contato = new Cadastro();
         $contato->create($request->all());
-        return view('register');
+        return view('cadastro');
     }
     
 }
