@@ -8,7 +8,9 @@ Portal chamados
 <li>Colocar php como variável ambiente</li>
 <li>Baixar e instalar composer</li>
 <pre>
+<a>
 https://getcomposer.org/download/
+</a>
 </pre>
 <li>Instalar Laravel</li>
 <pre>
