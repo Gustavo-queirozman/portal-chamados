@@ -9,7 +9,6 @@ class ContatoController extends Controller
 {
     public function contato(Request $request)
     {
-
         $contato = new Contato();
         $contato->create($request->all());
 

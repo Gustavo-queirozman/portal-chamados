@@ -3,19 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SolicitarCadastroMail;
-use App\Models\Register;
-use App\Models\User;
+use App\Models\Cadastro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
-class RegisterController extends Controller
+class CadastroController extends Controller
 {
     public function index()
     {
         return view('register');
     }
 
-    public function solicitar(Request $request)
+    public function solicitarCadastro(Request $request)
     {
         //echo "realizar envio de email";
         $mailData = [
@@ -55,8 +54,9 @@ class RegisterController extends Controller
             echo "Não é possível efetuar o cadastro pois o email já está em uso";
         }
 
-        $contato = new Register();
+        $contato = new Cadastro();
         $contato->create($request->all());
         return view('register');
     }
+    
 }

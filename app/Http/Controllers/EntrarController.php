@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
-class LoginController extends Controller
+class EntrarController extends Controller
 {
     public function index(Request $request){
         $erro = $request->get('erro');
@@ -13,7 +12,7 @@ class LoginController extends Controller
         //return view('login', ['erro' => $erro]);
     }
 
-    public function autenticar(Request $request){
+    public function login(Request $request){
         $regras = [
             'usuario' => 'required',
             'senha' => 'required'

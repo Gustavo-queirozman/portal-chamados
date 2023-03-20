@@ -23,14 +23,17 @@ Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato'
 Route::post('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
 
 
-Route::get('/login/{erro?}', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
-Route::post('/login', [App\Http\Controllers\LoginController::class, 'autenticar'])->name('login');
+Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('login');
+Route::post('/entrar', [App\Http\Controllers\EntrarController::class, 'login'])->name('login');
 
-Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index'])->name('register');
-Route::post('/register', [App\Http\Controllers\RegisterController::class, 'solicitar'])->name('register');
+Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('register');
+Route::post('/cadastro', [App\Http\Controllers\CadastroController::class, 'solicitarCadastro'])->name('register');
 
-Route::get('/modify', [App\Http\Controllers\PasswordController::class, 'index']);
-Route::post('/modify', [App\Http\Controllers\PasswordController::class, 'teste']);
+Route::get('/mudar-senha', [App\Http\Controllers\MudarSenhaController::class, 'index']);
+Route::post('/mudar-senha', [App\Http\Controllers\MudarSenhaController::class, 'teste']);
+
+Route::get('/esqueci-senha', [App\Http\Controllers\EsqueciSenhaController::class, 'index']);
+Route::post('/esqueci-senha', [App\Http\Controllers\EsqueciSenhaController::class, 'enviarNovaSenhaNoEmail']);
 
 //Route::get('/esqueci-senha', [App\Http\Controllers\PasswordController::class, 'esqueciSenha'])->name('esqueciSenha');
 //Route::post('/esqueci-senha', [App\Http\Controllers\PasswordController::class, 'esqueciSenha'])->name('esqueciSenha');
