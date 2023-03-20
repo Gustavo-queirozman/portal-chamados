@@ -18,10 +18,6 @@ Route::get('/', function () {
 });
 
 
-
-//Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
-//Route::post('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
-
 Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('entrar');
 Route::post('/entrar', [App\Http\Controllers\EntrarController::class, 'entrar'])->name('entrar');
 
@@ -34,7 +30,7 @@ Route::post('/mudarSenha', [App\Http\Controllers\MudarSenhaController::class, 'm
 Route::get('/esqueciSenha', [App\Http\Controllers\EsqueciSenhaController::class, 'index'])->name('esqueciSenha');
 Route::post('/esqueciSenha', [App\Http\Controllers\EsqueciSenhaController::class, 'enviarNovaSenhaNoEmail'])->name('esqueciSenha');
 
-//Route::get('/esqueci-senha', [App\Http\Controllers\PasswordController::class, 'esqueciSenha'])->name('esqueciSenha');
-//Route::post('/esqueci-senha', [App\Http\Controllers\PasswordController::class, 'esqueciSenha'])->name('esqueciSenha');
+
+
 
 Route::get('/chamados', [App\Http\Controllers\ChamadosController::class, 'index'])->name('chamados');

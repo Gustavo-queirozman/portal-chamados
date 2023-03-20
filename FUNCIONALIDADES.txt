@@ -1,0 +1,26 @@
+FUNCIONALIDADES
+
+COLABORADOR:
+Meu perfil
+Novo chamado
+Meus chamados
+Sair
+
+
+SUPORTE:
+Meu perfil
+Novo chamado
+Abrir chamado
+Chamados
+Sair
+
+
+
+ADM:
+Meu perfil
+Novo chamado
+Abrir chamado
+Chamados
+Cad. Colaborador
+Gestão
+Sair
