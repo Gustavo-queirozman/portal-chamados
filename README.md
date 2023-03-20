@@ -8,6 +8,9 @@ Portal chamados
 <li>Colocar php como variável ambiente</li>
 <li>Instalar composer</li>
 <li>Instalar Laravel</li>
+<pre>
+composer global require laravel/installer
+</pre>
 <li>Executar projeto Laravel</li>
 <pre>
 php artisan serve
