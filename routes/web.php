@@ -30,7 +30,7 @@ Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'
 Route::post('/cadastro', [App\Http\Controllers\CadastroController::class, 'solicitarCadastro'])->name('register');
 
 Route::get('/mudar-senha', [App\Http\Controllers\MudarSenhaController::class, 'index']);
-Route::post('/mudar-senha', [App\Http\Controllers\MudarSenhaController::class, 'teste']);
+Route::post('/mudar-senha', [App\Http\Controllers\MudarSenhaController::class, 'mudarSenha']);
 
 Route::get('/esqueci-senha', [App\Http\Controllers\EsqueciSenhaController::class, 'index']);
 Route::post('/esqueci-senha', [App\Http\Controllers\EsqueciSenhaController::class, 'enviarNovaSenhaNoEmail']);
