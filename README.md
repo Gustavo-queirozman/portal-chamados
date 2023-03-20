@@ -6,7 +6,10 @@ Portal chamados
 <ol>
 <li>Instalar php</li>
 <li>Colocar php como variável ambiente</li>
-<li>Instalar composer</li>
+<li>Baixar e instalar composer</li>
+<pre>
+https://getcomposer.org/download/
+</pre>
 <li>Instalar Laravel</li>
 <pre>
 composer global require laravel/installer
