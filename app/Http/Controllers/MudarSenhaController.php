@@ -19,6 +19,7 @@ class MudarSenhaController extends Controller
             $user = new User();
             $usuario = $_SESSION['usuario'];
             $user->where('usuario', $usuario)->update(['senha' => $novaSenha]);
+            dd("senha alterada");
         } else {
             echo "senhas distintas";
         }

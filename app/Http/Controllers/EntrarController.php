@@ -42,7 +42,8 @@ class EntrarController extends Controller
             //die("logado com sucesso!");
             return redirect()->route('chamados');
         }else{
-            return redirect()->route('login', ['erro'=>1]);
+            //die("erro ao fazer login");
+            return redirect()->route('entrar', ['erro'=>1]);
         }
     }
 }

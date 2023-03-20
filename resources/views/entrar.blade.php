@@ -37,7 +37,7 @@
                             <br> <br>
                             <div class="d-flex justify-content-center align-items-cente text-center">
                                 <p>
-                                    <a href="/esqueci-senha" class="text-decoration-none text-dark">Esqueci minha
+                                    <a href="/esqueciSenha" class="text-decoration-none text-dark">Esqueci minha
                                         senha </a>
                                     <a href="/cadastro" class="text-decoration-none text-dark">| Solicitar
                                         cadastro</a>

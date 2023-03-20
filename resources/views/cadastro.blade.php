@@ -40,7 +40,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./css/login.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <title>Document</title>
+    <title>Cadastro</title>
 </head>
 
 <body>
@@ -107,9 +107,9 @@
                             <br><br>
                             <div class="d-flex justify-content-center align-items-cente text-center">
                                 <p>
-                                    <a href="/esqueci-senha" class="text-decoration-none text-dark">Esqueci minha
+                                    <a href="/esqueciSenha" class="text-decoration-none text-dark">Esqueci minha
                                         senha </a>
-                                    <a href="/" class="text-decoration-none text-dark">| Entrar</a>
+                                    <a href="/entrar" class="text-decoration-none text-dark">| Entrar</a>
                                 </p>
                             </div>
                         </div>

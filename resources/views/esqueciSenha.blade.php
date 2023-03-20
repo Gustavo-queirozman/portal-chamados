@@ -12,7 +12,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./css/login.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <title>Document</title>
+    <title>Esqueci Senha</title>
 </head>
 
 <body>
@@ -27,16 +27,16 @@
                 </div>
 
                 <div class="col-md-2 col-lg-6 col-xl-4 offset-xl-1   justify-content-center">
-                    <form action="{{ route('esqueci-senha') }}" method="post">
+                    <form action="{{ route('esqueciSenha') }}" method="post">
                         @csrf
                         <div class="form-outline mb-4">
                             <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Email" required />
                         </div>
 
                         <div class="text-center text-lg-center mt-1 pt-2">
-                            <button type="button" class="btn btn-primary btn-lg"
-                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Resetar
-                            </button>
+                            <input type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Resetar"
+                            />
                             <br><br>
                             <div class="d-flex justify-content-center align-items-cente text-center">
                                 <p>
