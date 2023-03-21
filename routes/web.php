@@ -23,14 +23,12 @@ Route::post('/entrar', [App\Http\Controllers\EntrarController::class, 'entrar'])
 
 Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
 Route::post('/cadastro', [App\Http\Controllers\CadastroController::class, 'solicitarCadastro'])->name('cadastro');
+Route::post('/cadastro/criar', [App\Http\Controllers\CadastroController::class, 'criar'])->name('cadastro');
 
 Route::get('/mudarSenha', [App\Http\Controllers\MudarSenhaController::class, 'index'])->name('mudarSenha');
 Route::post('/mudarSenha', [App\Http\Controllers\MudarSenhaController::class, 'mudarSenha'])->name('mudarSenha');
 
 Route::get('/esqueciSenha', [App\Http\Controllers\EsqueciSenhaController::class, 'index'])->name('esqueciSenha');
 Route::post('/esqueciSenha', [App\Http\Controllers\EsqueciSenhaController::class, 'enviarNovaSenhaNoEmail'])->name('esqueciSenha');
-
-
-
 
 Route::get('/chamados', [App\Http\Controllers\ChamadosController::class, 'index'])->name('chamados');
