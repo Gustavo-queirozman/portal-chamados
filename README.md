@@ -17,3 +17,33 @@ composer global require laravel/installer
 php artisan serve
 </pre>
 </ol>
+
+
+<h3>Funcionalidades</h3>
+
+FUNCIONALIDADES
+
+<ul>
+    <li>Adm:</li>
+    <ul>
+        <li>Meu perfil</li>
+        <li>Chamados</li>
+        <li>Usuários</li>
+        <li>Gestão</li>
+        <li>Sair</li>
+    </ul>
+    <br>
+    <li>Atendente:</li>
+    <ul>
+        <li>Meu perfil</li>
+        <li>Chamados</li>
+        <li>Sair</li>        
+    </ul>
+    <br>
+    <li>Solicitante</li>
+    <ul>
+        <li>Meu perfil</li>
+        <li>Chamados</li>
+        <li>Sair</li>
+    </ul>
+</ul>
