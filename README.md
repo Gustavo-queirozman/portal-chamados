@@ -5,8 +5,8 @@
     <li>Adm:</li>
     <ul>
         <li>Meu perfil</li>
-        <li>Chamados</li>
         <li>Usuários</li>
+        <li>Chamados</li>
         <li>Gestão</li>
         <li>Sair</li>
     </ul>
