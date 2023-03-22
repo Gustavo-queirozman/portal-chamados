@@ -1,13 +1,13 @@
 FUNCIONALIDADES
 
-COLABORADOR:
-Meu perfil ()
+solicitante:
+Meu perfil
 Novo chamado
 Meus chamados
 Sair
 
 
-SUPORTE:
+Atendente:
 Meu perfil
 Novo chamado
 Abrir chamado
@@ -15,8 +15,7 @@ Chamados
 Sair
 
 
-
-ADM:
+adm:
 Meu perfil
 Novo chamado
 Abrir chamado
