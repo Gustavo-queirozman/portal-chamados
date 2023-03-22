@@ -2,7 +2,7 @@
 
 <h2>Funcionalidades</h2>
 <ul>
-    <b><li>Adm</li></b>
+    <li>Adm</li>
     <ul>
         <li>Meu perfil</li>
         <li>Usuários</li>
@@ -11,14 +11,14 @@
         <li>Sair</li>
     </ul>
     <br>
-    <b><li>Atendente</li></b>
+    <li>Atendente</li>
     <ul>
         <li>Meu perfil</li>
         <li>Chamados</li>
         <li>Sair</li>        
     </ul>
     <br>
-    <b><li>Solicitante</li></b>
+    <li>Solicitante</li>
     <ul>
         <li>Meu perfil</li>
         <li>Chamados</li>
