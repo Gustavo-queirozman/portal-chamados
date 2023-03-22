@@ -1,4 +1,5 @@
-/* Lógico_1: */
+create database portal-chamados;
+use portal-chamados;
 
 CREATE TABLE usuario (
     idUsuario INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -34,7 +35,7 @@ CREATE TABLE categoria (
     categoria VARCHAR(255)
 );
 
-CREATE TABLE responde (
+CREATE TABLE respostaChamado (
     fkUsuario INTEGER,
     fkChamado INTEGER,
     dataHora DATETIME,
