@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\autenticacao;
 
+use App\Http\Controllers\Controller;
 use App\Mail\SolicitarCadastroMail;
 use App\Models\Cadastro;
+use App\Models\User as ModelsUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class CadastroController extends Controller
 {
-    public function index()
-    {
-        return view('cadastro');
-    }
+
 
     public function solicitarCadastro(Request $request)
     {
@@ -41,7 +40,7 @@ class CadastroController extends Controller
         $usuario = $request->get('usuario');
 
         //iniciar o Model User
-        $user = new User();
+        $user = new ModelsUser();
         $dados = $user
             ->where('email', $email)
             ->orWhere('usuario', $usuario)->get();
@@ -58,5 +57,4 @@ class CadastroController extends Controller
         $contato->create($request->all());
         return view('cadastro');
     }
-    
 }

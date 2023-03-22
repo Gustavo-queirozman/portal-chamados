@@ -14,21 +14,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('entrar');
+    return view('autenticacao.entrar');
 });
 
 
-Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('entrar');
-Route::post('/entrar', [App\Http\Controllers\EntrarController::class, 'entrar'])->name('entrar');
+Route::get('/entrar', function () {
+    return view('autenticacao.entrar');
+});
+Route::post('/entrar', [App\Http\Controllers\autenticacao\EntrarController::class, 'entrar'])->name('entrar');
 
-Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
-Route::post('/cadastro', [App\Http\Controllers\CadastroController::class, 'solicitarCadastro'])->name('cadastro');
-Route::post('/cadastro/criar', [App\Http\Controllers\CadastroController::class, 'criar'])->name('cadastro');
 
-Route::get('/mudarSenha', [App\Http\Controllers\MudarSenhaController::class, 'index'])->name('mudarSenha');
-Route::post('/mudarSenha', [App\Http\Controllers\MudarSenhaController::class, 'mudarSenha'])->name('mudarSenha');
+Route::get('/cadastro', function () {
+    return view('autenticacao.cadastro');
+});
+Route::post('/cadastro', [App\Http\Controllers\autenticacao\CadastroController::class, 'solicitarCadastro'])->name('autenticacao.cadastro');
+#Route::post('/cadastro/criar', [App\Http\Controllers\autenticacao\CadastroController::class, 'criar'])->name('autenticacao.cadastro');
+#Route::get('/mudarSenha', [App\Http\Controllers\MudarSenhaController::class, 'index'])->name('autenticacao.mudarSenha');
 
-Route::get('/esqueciSenha', [App\Http\Controllers\EsqueciSenhaController::class, 'index'])->name('esqueciSenha');
-Route::post('/esqueciSenha', [App\Http\Controllers\EsqueciSenhaController::class, 'enviarNovaSenhaNoEmail'])->name('esqueciSenha');
 
-Route::get('/chamados', [App\Http\Controllers\ChamadosController::class, 'index'])->name('chamados');
+Route::get('/mudarSenha', function () {
+    return view('autenticacao.mudarSenha');
+});
+Route::post('/mudarSenha', [App\Http\Controllers\autenticacao\MudarSenhaController::class, 'mudarSenha'])->name('autenticacao.mudarSenha');
+
+
+
+Route::get('/esqueciSenha', function () {
+    return view('autenticacao.esqueciSenha');
+});
+Route::post('/esqueciSenha', [App\Http\Controllers\autenticacao\EsqueciSenhaController::class, 'enviarNovaSenhaNoEmail'])->name('autenticacao.esqueciSenha');
+

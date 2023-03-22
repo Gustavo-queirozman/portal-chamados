@@ -1,18 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\autenticacao;
 
+use App\Http\Controllers\Controller;
+use App\Models\User as ModelsUser;
 use Illuminate\Http\Request;
-use App\Models\User;
+
 class EntrarController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $erro = $request->get('erro');
         return view('entrar');
         //return view('login', ['erro' => $erro]);
     }
 
-    public function entrar(Request $request){
+    public function entrar(Request $request)
+    {
         $regras = [
             'usuario' => 'required',
             'senha' => 'required'
@@ -29,10 +33,10 @@ class EntrarController extends Controller
         $usuario = $request->get('usuario');
         $senha = $request->get('senha');
 
-        $user = new User;
+        $user = new ModelsUser();
         $dados = $user->where('usuario', $usuario)->where('senha', $senha)->get()->first();
 
-        if(isset($dados)){
+        if (isset($dados)) {
             session_start();
             $_SESSION['id'] = $dados->nome;
             $_SESSION['usuario'] = $dados->usuario;
@@ -40,10 +44,11 @@ class EntrarController extends Controller
             $_SESSION['nome'] = $dados->nome;
             $_SESSION['email'] = $dados->email;
             //die("logado com sucesso!");
-            return redirect()->route('chamados');
-        }else{
+            #return redirect()->route('autenticacao.index');
+            return view('autenticacao.index');
+        } else {
             //die("erro ao fazer login");
-            return redirect()->route('entrar', ['erro'=>1]);
+            return redirect()->route('entrar', ['erro' => 1]);
         }
     }
 }

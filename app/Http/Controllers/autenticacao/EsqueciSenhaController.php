@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\autenticacao;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class EsqueciSenhaController extends Controller
 {
-    public function index(){
-        return view('esqueciSenha');
-    }    
 
-    public function enviarNovaSenhaNoEmail(Request $request){
+
+    public function enviarNovaSenhaNoEmail(Request $request)
+    {
         $email = $request->get('email');
         echo $email;
         die();
