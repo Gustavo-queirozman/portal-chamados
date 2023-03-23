@@ -71,6 +71,9 @@ Route::prefix('solicitante')->group(function () {
         Route::get('/ver', function () {
             return view('solicitante.perfil.ver');
         });
+        Route::get('/editar', function () {
+            return view('solicitante.perfil.editar');
+        });
         #Route::post('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'ver']);
         #Route::post('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'editar']);
     });
