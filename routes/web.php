@@ -53,14 +53,26 @@ Route::post('/esqueciSenha', [App\Http\Controllers\autenticacao\EsqueciSenhaCont
 
 Route::prefix('solicitante')->group(function () {
     Route::prefix('chamado')->group(function () {
-        Route::post('/ver', [App\Http\Controllers\solicitante\ChamadoController::class, 'ver']);
-        Route::post('/criar', [App\Http\Controllers\solicitante\ChamadoController::class, 'criar']);
-        Route::post('/editar', [App\Http\Controllers\solicitante\ChamadoController::class, 'editar']);
+        Route::get('/ver', function () {
+            return view('solicitante.chamado.ver');
+        });
+        Route::get('/criar', function () {
+            return view('solicitante.chamado.criar');
+        });
+        Route::get('/editar', function () {
+            return view('solicitante.chamado.editar');
+        });
+        #Route::post('/ver', [App\Http\Controllers\solicitante\ChamadoController::class, 'ver']);
+        #Route::post('/criar', [App\Http\Controllers\solicitante\ChamadoController::class, 'criar']);
+        #Route::post('/editar', [App\Http\Controllers\solicitante\ChamadoController::class, 'editar']);
     });
 
     Route::prefix('perfil')->group(function () {
-        Route::post('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'ver']);
-        Route::post('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'editar']);
+        Route::get('/ver', function () {
+            return view('solicitante.perfil.ver');
+        });
+        #Route::post('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'ver']);
+        #Route::post('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'editar']);
     });
 });
 
