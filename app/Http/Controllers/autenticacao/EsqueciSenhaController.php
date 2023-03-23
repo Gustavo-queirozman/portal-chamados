@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class EsqueciSenhaController extends Controller
 {
 
-
     public function enviarNovaSenhaNoEmail(Request $request)
     {
         $email = $request->get('email');

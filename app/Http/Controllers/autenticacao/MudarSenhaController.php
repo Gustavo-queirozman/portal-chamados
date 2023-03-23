@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\autenticacao;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\User;
 use App\Models\User as ModelsUser;
 use Illuminate\Http\Request;
 
 class MudarSenhaController extends Controller
 {
 
+    public function index(){
+        return "dgsgdsgs";
+    }
 
     public function mudarSenha(Request $request)
     {

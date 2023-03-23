@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class ChamadoController extends Controller
 {
-    //
-
     public function ver(){
         
     }

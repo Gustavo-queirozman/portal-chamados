@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Mail;
 class CadastroController extends Controller
 {
 
-
+    public function index(){
+        return "sdcscdscsdc";
+    }
     public function solicitarCadastro(Request $request)
     {
+        dd('solicitar cadastro');
         //echo "realizar envio de email";
         $mailData = [
             'title' => 'Cadastro no portal chamados',
