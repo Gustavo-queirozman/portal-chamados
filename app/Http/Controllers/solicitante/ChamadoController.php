@@ -9,9 +9,7 @@ use Illuminate\Http\Request;
 
 class ChamadoController extends Controller
 {
-      //
-      public function getChamado()
-      {
+      public function getChamado(){
           session_start();
           $idUsuario = 1;
           $user = new User();

@@ -20,7 +20,7 @@
             <div class="card-header"><b>Atualizar perfil</b></div>
             <div class="card-body">
                
-                <form action="/solicitante/perfil/editar" method="post">
+                <form action="" method="post">
                     @csrf
                     <!-- Input type text -->
                     <div class="form-group">
@@ -82,7 +82,7 @@
 
 
                     <div>
-                        <button type="button" class="btn btn-primary">Atualizar</button>
+                        <button type="submit" class="btn btn-primary">Atualizar</button>
                     </div>
                 </form>
             </div>

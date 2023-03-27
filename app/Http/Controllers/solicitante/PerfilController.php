@@ -5,20 +5,22 @@ namespace App\Http\Controllers\solicitante;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PerfilController extends Controller
 {
     //
     public function update(Request $request){
-        $dados = User::find(1);
-        $dados->nome = $request->input('nome');
-        $dados->email = $request->input('email');
-        $dados->usuario = $request->input('usuario');
-        $dados->senha = $request->input('senha');
-        $dados->setor = $request->input('setor');
-        $dados->ramal = $request->input('ramal');
-        $dados->codAnydesk = $request->input('codAnydesk');
-        $dados->update();
+        $usuario = new User();
+        $usuario->nome = $request->input('nome');
+        $usuario->email = $request->input('email');
+        $usuario->usuario = $request->input('usuario');
+        $usuario->senha = $request->input('senha');
+        $usuario->setor = $request->input('setor');
+        $usuario->ramal = $request->input('ramal');
+        $usuario->codAnydesk = $request->input('codAnydesk');
+        $usuario = DB::table('usuario')->where('idUsuario',1)->update(['nome'=>'dfçsdmfç']);
+
         //return view('solicitante.perfil.editar')
         return redirect()->back()->with('status','Student Updated Successfully');
     }
