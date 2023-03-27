@@ -41,7 +41,7 @@
                             <div class="d-flex justify-content-center align-items-cente text-center">
                                 <p>
                                     <a href="/entrar" class="text-decoration-none text-dark">Acessar minha conta</a>
-                                    <a href="/cadastro" class="text-decoration-none text-dark"> | Solicitar cadastro</a>
+                                    <a href="/solicitarCadastro" class="text-decoration-none text-dark"> | Solicitar cadastro</a>
                                 </p>
                             </div>
                         </div>

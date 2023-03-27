@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/entrar', function () {
     return view('autenticacao.entrar');
 });
-Route::post('/entrar', [App\Http\Controllers\autenticacao\EntrarController::class, 'entrar'])->name('entrar');
+Route::post('/entrar', [App\Http\Controllers\autenticacao\EntrarController::class, 'entrar'])->name('atenticacao.entrar');
 
 
 Route::get('/cadastro', function () {
@@ -35,6 +35,16 @@ Route::post('/cadastro', [App\Http\Controllers\autenticacao\CadastroController::
 #Route::post('/cadastro', [App\Http\Controllers\autenticacao\CadastroController::class, 'solicitarCadastro']);
 #Route::post('/cadastro/criar', [App\Http\Controllers\autenticacao\CadastroController::class, 'criar'])->name('autenticacao.cadastro');
 #Route::get('/mudarSenha', [App\Http\Controllers\MudarSenhaController::class, 'index'])->name('autenticacao.mudarSenha');
+Route::get('/solicitarCadastro', function () {
+    return view('autenticacao.solicitarCadastro');
+});
+Route::post('/solicitarCadastro', [App\Http\Controllers\autenticacao\CadastroController::class, 'solicitarCadastro'])->name('solicitarCadastro');
+
+
+Route::get('/cadastro', function () {
+    return view('autenticacao.cadastro');
+});
+Route::post('/cadastro', [App\Http\Controllers\autenticacao\CadastroController::class, 'cadastro'])->name('cadastro');
 
 
 Route::get('/mudarSenha', function () {
@@ -62,20 +72,19 @@ Route::prefix('solicitante')->group(function () {
         Route::get('/editar', function () {
             return view('solicitante.chamado.editar');
         });
+
         #Route::post('/ver', [App\Http\Controllers\solicitante\ChamadoController::class, 'ver']);
-        #Route::post('/criar', [App\Http\Controllers\solicitante\ChamadoController::class, 'criar']);
+        Route::post('/criar', [App\Http\Controllers\solicitante\ChamadoController::class, 'criar']);
         #Route::post('/editar', [App\Http\Controllers\solicitante\ChamadoController::class, 'editar']);
     });
 
     Route::prefix('perfil')->group(function () {
-        Route::get('/ver', function () {
-            return view('solicitante.perfil.ver');
-        });
-        Route::get('/editar', function () {
-            return view('solicitante.perfil.editar');
-        });
+        Route::get('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'getVer']);
+        Route::get('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'getEditar']);
+        Route::post('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'update']);
+
         #Route::post('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'ver']);
-        #Route::post('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'editar']);
+
     });
 });
 
@@ -98,13 +107,12 @@ Route::prefix('atendente')->group(function () {
     });
 
     Route::prefix('perfil')->group(function () {
-        Route::get('/ver', function () {
-            return view('atendente.perfil.ver');
-        });
-        Route::get('/editar', function () {
-            return view('atendente.perfil.editar');
-        });
-        
+        Route::get('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'getVer']);
+        Route::get('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'getEditar']);
+        Route::post('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'postEditar']);
+
+        #Route::post('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'ver']);
+
     });
 });
 

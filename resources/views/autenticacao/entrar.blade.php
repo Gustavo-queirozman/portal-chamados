@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <h1>Entrar</h1>
     <section class="vh-100">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -39,7 +40,7 @@
                                 <p>
                                     <a href="/esqueciSenha" class="text-decoration-none text-dark">Esqueci minha
                                         senha </a>
-                                    <a href="/cadastro" class="text-decoration-none text-dark">| Solicitar
+                                    <a href="/solicitarCadastro" class="text-decoration-none text-dark">| Solicitar
                                         cadastro</a>
                                 </p>
                             </div>
