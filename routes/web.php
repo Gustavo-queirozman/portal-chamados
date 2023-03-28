@@ -73,18 +73,17 @@ Route::prefix('solicitante')->group(function () {
             return view('solicitante.chamado.editar');
         });
 
-        #Route::post('/ver', [App\Http\Controllers\solicitante\ChamadoController::class, 'ver']);
-        Route::post('/criar', [App\Http\Controllers\solicitante\ChamadoController::class, 'criar']);
-        #Route::post('/editar', [App\Http\Controllers\solicitante\ChamadoController::class, 'editar']);
+        Route::post('/ver', [App\Http\Controllers\solicitante\ChamadoController::class, 'ver']);
+        Route::post('/criar', [App\Http\Controllers\solicitante\ChamadoController::class, 'editar']);
+        Route::post('/editar', [App\Http\Controllers\solicitante\ChamadoController::class, 'editar']);
     });
 
     Route::prefix('perfil')->group(function () {
-        Route::get('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'getVer']);
-        Route::get('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'getEditar']);
+        Route::get('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'show']);
+        Route::get('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'edit']);
         Route::post('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'update']);
 
         #Route::post('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'ver']);
-
     });
 });
 
@@ -108,11 +107,9 @@ Route::prefix('atendente')->group(function () {
 
     Route::prefix('perfil')->group(function () {
         Route::get('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'getVer']);
-        Route::get('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'getEditar']);
-        Route::post('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'postEditar']);
-
-        #Route::post('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'ver']);
-
+        Route::get('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'show']);
+        Route::post('/editar', [App\Http\Controllers\solicitante\PerfilController::class, 'update']);
+        Route::post('/ver', [App\Http\Controllers\solicitante\PerfilController::class, 'ver']);
     });
 });
 

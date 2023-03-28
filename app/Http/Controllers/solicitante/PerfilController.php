@@ -3,27 +3,92 @@
 namespace App\Http\Controllers\solicitante;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\solicitante\Perfil;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 
 class PerfilController extends Controller
 {
-    //
+
+    public function show()
+    {
+        //session_start();
+        $idUsuario = 1;
+        return view('solicitante.perfil.ver', [
+            'usuario' => Perfil::findOrFail($idUsuario)
+        ]);
+    }
+
+    public function edit(Request $request)
+    {
+        $idUsuario = 1;
+        return view('solicitante.perfil.editar', [
+            'usuario' => Perfil::findOrFail($idUsuario)
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+   
+
+         //$usuario->nome = $request->input('nome');
+        //$usuario->email = $request->input('email');
+        //$usuario->usuario = $request->input('usuario');
+        //$usuario->senha = $request->input('senha');
+        //$usuario->setor = $request->input('setor');
+        //$usuario->ramal = $request->input('ramal');
+        //$usuario->codAnydesk = $request->input('codAnydesk');
+        $idUsuario = 1;
+        $nome = $request->input('nome');
+        $email = $request->input('email');
+        $usuario = $request->input('usuario');
+        $senha = $request->input('senha');
+        $setor = $request->input('setor');
+        $ramal = $request->input('ramal');
+        $codAnydesk = $request->input('codAnydesk');
+        Perfil::updateOrCreate('UPDATE usuario SET nome = ?, email =?, usuario=?, senha=?,setor=?,ramal=?,codAnydesk=?  WHERE id = ?',[$nome, $email, $usuario, $senha, $setor, $ramal, $codAnydesk, $idUsuario]);
+    }
+
+
+    /*
     public function update(Request $request){
+        echo("update");
+        die();
         $usuario = new User();
-        $usuario->nome = $request->input('nome');
-        $usuario->email = $request->input('email');
-        $usuario->usuario = $request->input('usuario');
-        $usuario->senha = $request->input('senha');
-        $usuario->setor = $request->input('setor');
-        $usuario->ramal = $request->input('ramal');
-        $usuario->codAnydesk = $request->input('codAnydesk');
-        $usuario = DB::table('usuario')->where('idUsuario',1)->update(['nome'=>'dfçsdmfç']);
+        //$usuario->nome = $request->input('nome');
+        //$usuario->email = $request->input('email');
+        //$usuario->usuario = $request->input('usuario');
+        //$usuario->senha = $request->input('senha');
+        //$usuario->setor = $request->input('setor');
+        //$usuario->ramal = $request->input('ramal');
+        //$usuario->codAnydesk = $request->input('codAnydesk');
+        $usuario->update($request->all());
+        return view('index',$usuario);
+        //$usuario = DB::table('usuario')->where('idUsuario',1)->update(['nome'=>'dfçsdmfç']);
 
         //return view('solicitante.perfil.editar')
-        return redirect()->back()->with('status','Student Updated Successfully');
+        //return redirect()->back()->with('status','Student Updated Successfully');
     }
+
+    public function show($id)
+    {
+
+        echo("show");
+        die();
+        session_start();
+        $user = new User();
+        $dados = $user->where('idUsuario', $id)->get();
+        $nome = $dados[0]['nome'];
+        $email = $dados[0]['email'];
+        $usuario = $dados[0]['usuario'];
+        $senha = $dados[0]['senha'];
+        $setor = $dados[0]['setor'];
+        $ramal = $dados[0]['ramal'];
+        $codAnydesk = $dados[0]['codAnydesk'];
+        return view('solicitante.perfil.ver', ['nome' => $nome, 'email'=>$email, 'usuario'=>$usuario, 'senha'=>$senha, 'setor'=>$setor, 'ramal'=>$ramal, 'codAnydesk'=>$codAnydesk]);
+    }
+
 
     public function getEditar()
     {
@@ -61,7 +126,5 @@ class PerfilController extends Controller
         $codAnydesk = $dados[0]['codAnydesk'];
         return view('solicitante.perfil.ver', ['nome' => $nome, 'email'=>$email, 'usuario'=>$usuario, 'senha'=>$senha, 'setor'=>$setor, 'ramal'=>$ramal, 'codAnydesk'=>$codAnydesk]);
     }
-
-
-
+*/
 }

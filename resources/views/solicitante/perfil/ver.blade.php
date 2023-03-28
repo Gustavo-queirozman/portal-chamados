@@ -30,10 +30,11 @@
                 <div class="card-body">
               
                     <form>
+                        @csrf
                         <!-- Input type text -->
                         <div class="form-group">
                             <label for="nome">Nome*</label>
-                            <input type="text" class="form-control" name="nome" value="{{$nome}}"
+                            <input type="text" class="form-control" name="nome" value="{{$usuario['nome']}}"
                                 id="nome" disabled>
                         </div>
 
@@ -43,21 +44,21 @@
                                 <div class="col-md-4 mb-3">
                                     <label for="email">Email*</label>
                                     <input type="email" class="form-control"
-                                        name="email" value="{{$email}}"
+                                        name="email" value="{{$usuario['email']}}"
                                         id="email" disabled>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <!-- Input type text -->
                                     <label for="usuario">Usuário*</label>
                                     <input type="text" class="form-control"
-                                        name="usuario" id="usuario" value="{{$usuario}}" disabled>
+                                        name="usuario" id="usuario" value="{{$usuario['usuario']}}" disabled>
                                 </div>
 
                                 <div class="col-md-4 mb-3">
                                     <!-- Input type text -->
                                     <label for="senha">Senha*</label>
                                     <input type="password" class="form-control"
-                                        name="senha" id="senha" value="{{$senha}}" disabled>
+                                        name="senha" id="senha" value="{{$usuario['senha']}}" disabled>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +71,7 @@
                                     <label for="setor">Setor*</label>
                                     <select class="custom-select" name="setor"
                                         id="setor" disabled>
-                                        <option value="{{$setor}}">{{$setor}}</option>
+                                        <option value="{{$usuario['setor']}}">{{$usuario['setor']}}</option>
                                         <option value="Atendimento">Atendimento</option>
                                         <option value="Atualização">Atualização</option>
                                         <option value="Cadastro">Cadastro</option>
@@ -86,12 +87,12 @@
                                 <div class="col-md-4 mb-3">
                                     <label for="ramail">Ramal</label>
                                     <input type="text" class="form-control"
-                                        name="ramal" id="ramal" value="{{$ramal}}" disabled>
+                                        name="ramal" id="ramal" value="{{$usuario['ramal']}}" disabled>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="codAnydesk">Código do Anydesk</label>
                                     <input type="text" class="form-control"
-                                        name="codAnydesk" value="{{$codAnydesk}}" id="codAnydesk" disabled>
+                                        name="codAnydesk" value="{{$usuario['codAnydesk']}}" id="codAnydesk" disabled>
                                 </div>
                             </div>
                         </div>

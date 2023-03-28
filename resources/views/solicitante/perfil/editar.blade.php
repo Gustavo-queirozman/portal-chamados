@@ -9,7 +9,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
     <title>Perfil</title>
 </head>
 
@@ -19,44 +18,38 @@
         <div class="card w-75" style="border-radius:10px">
             <div class="card-header"><b>Atualizar perfil</b></div>
             <div class="card-body">
-               
                 <form action="/solicitante/perfil/editar" method="post">
                     @csrf
-                    <!-- Input type text -->
+
                     <div class="form-group">
                         <label for="nome">Nome*</label>
-                        <input type="text" class="form-control" name="nome" value="{{$nome}}" id="nome" required>
+                        <input type="text" class="form-control" name="nome" value="{{$usuario['nome']}}" id="nome" required>
                     </div>
 
-                    <!-- columns -->
                     <div class="form-group">
                         <div class="form-row align-items-center">
                             <div class="col-md-4 mb-3">
                                 <label for="email">Email*</label>
-                                <input type="email" class="form-control" name="email" value="{{$email}}" id="email" required>
+                                <input type="email" class="form-control" name="email" value="{{$usuario['email']}}" id="email" required>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <!-- Input type text -->
                                 <label for="usuario">Usuário*</label>
-                                <input type="text" class="form-control" name="usuario" id="usuario" value="{{$usuario}}" required>
+                                <input type="text" class="form-control" name="usuario" id="usuario" value="{{$usuario['usuario']}}" required>
                             </div>
 
                             <div class="col-md-4 mb-3">
-                                <!-- Input type text -->
                                 <label for="senha">Senha*</label>
-                                <input type="password" class="form-control" name="senha" id="senha" value="{{$senha}}" required>
+                                <input type="password" class="form-control" name="senha" id="senha" value="{{$usuario['senha']}}" required>
                             </div>
                         </div>
                     </div>
 
-                    <!-- columns -->
                     <div class="form-group">
                         <div class="form-row align-items-center">
                             <div class="col-md-4 mb-3">
-                                <!-- select -->
                                 <label for="setor">Setor*</label>
                                 <select class="custom-select" name="setor" id="setor">
-                                    <option value="{{$setor}}">{{$setor}}</option>
+                                    <option value="{{$usuario['setor']}}">{{$usuario['setor']}}</option>
                                     <option value="Atendimento">Atendimento</option>
                                     <option value="Atualização">Atualização</option>
                                     <option value="Cadastro">Cadastro</option>
@@ -71,18 +64,16 @@
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="ramail">Ramal</label>
-                                <input type="text" class="form-control" name="ramal" id="ramal" value="{{$ramal}}">
+                                <input type="text" class="form-control" name="ramal" id="ramal" value="{{$usuario['ramal']}}">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="codAnydesk">Código do Anydesk</label>
-                                <input type="text" class="form-control" name="codAnydesk" value="{{$codAnydesk}}" id="codAnydesk">
+                                <input type="text" class="form-control" name="codAnydesk" value="{{$usuario['codAnydesk']}}" id="codAnydesk">
                             </div>
                         </div>
                     </div>
-
-
                     <div>
-                        <button type="submit" class="btn btn-primary">Atualizar</button>
+                        <button type="button" class="btn btn-primary" name="button">Atualizar</button>
                     </div>
                 </form>
             </div>
