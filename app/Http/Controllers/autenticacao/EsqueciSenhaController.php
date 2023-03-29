@@ -13,18 +13,13 @@ class EsqueciSenhaController extends Controller
 
     public function enviarNovaSenhaNoEmail(Request $request)
     {
+
         $email = $request->input('email');
         //gerar senha aleatoria
         $novaSenha = rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9);
         //alterar no banco de dados
-        $usuario = new User();
-        
-        $usuario->update(['senha' => $novaSenha]);
-        //mandar nova senha no email
-
-        $usuario = User::findOrFail($request->input('email'));
-        $usuario->senha = $request->input('senha');
-        $usuario->save();
-        
+        DB::table('usuario')
+              ->where('email', $email)
+              ->update(['senha' => $novaSenha]);
     }
 }
