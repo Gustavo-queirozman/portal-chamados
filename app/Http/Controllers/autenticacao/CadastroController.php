@@ -5,20 +5,19 @@ namespace App\Http\Controllers\autenticacao;
 use App\Http\Controllers\Controller;
 use App\Mail\SolicitarCadastroMail;
 use App\Models\Cadastro;
-use App\Models\User as ModelsUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class CadastroController extends Controller
 {
-
     public function index(){
         return "sdcscdscsdc";
     }
+
     public function solicitarCadastro(Request $request)
     {
-        dd('solicitar cadastro');
-        //echo "realizar envio de email";
+
         $mailData = [
             'title' => 'Cadastro no portal chamados',
             'body' => 'Solicito por meio desse email o cadastro no portal chamados..',
@@ -43,7 +42,7 @@ class CadastroController extends Controller
         $usuario = $request->get('usuario');
 
         //iniciar o Model User
-        $user = new ModelsUser();
+        $user = new User();
         $dados = $user
             ->where('email', $email)
             ->orWhere('usuario', $usuario)->get();

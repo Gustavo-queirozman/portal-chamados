@@ -14,13 +14,13 @@
 
 <body style="background-color: #F5F5F5">
     <br><br>
+
     <div class="d-flex align-center justify-content-center ">
         <div class="card w-75" style="border-radius:10px">
             <div class="card-header"><b>Atualizar perfil</b></div>
             <div class="card-body">
                 <form action="/solicitante/perfil/editar" method="post">
                     @csrf
-
                     <div class="form-group">
                         <label for="nome">Nome*</label>
                         <input type="text" class="form-control" name="nome" value="{{$usuario['nome']}}" id="nome" required>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary" name="button">Atualizar</button>
+                        <button type="submit" class="btn btn-primary" name="button">Atualizar</button>
                     </div>
                 </form>
             </div>

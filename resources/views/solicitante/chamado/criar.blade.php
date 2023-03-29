@@ -30,6 +30,7 @@
 
                 <div class="card-body">
                     <form action="/solicitante/chamado/criar" method="post">
+                        @csrf
                         <!-- columns -->
                         <div class="form-group">
                             <div class="form-row align-items-center">
@@ -48,7 +49,7 @@
                                     <label for="categoria">Categoria*</label>
                                     <select class="custom-select"
                                         name="categoria" id="categoria">
-                                        <option value="1"></option>
+                                        <option value="sd" selected>s</option>
                                     </select>
                                 </div>
 

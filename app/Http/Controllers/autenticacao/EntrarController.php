@@ -3,16 +3,27 @@
 namespace App\Http\Controllers\autenticacao;
 
 use App\Http\Controllers\Controller;
-use App\Models\User as ModelsUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EntrarController extends Controller
 {
+    public function get(){
+        var_dump('rge');
+        die();
+    }
+
+    public function show(){
+        $idUsuario = 1;
+        $usuario = new User();
+        $usuario = $usuario->where('idUsuario', $idUsuario)->get();
+        $usuario->fill($usuario);
+        return view('solicitante.perfil.editar', ['usuario'=>$usuario]);
+    }
+
     public function index(Request $request)
     {
-        $erro = $request->get('erro');
         return view('entrar');
-        //return view('login', ['erro' => $erro]);
     }
 
     public function entrar(Request $request)
@@ -33,7 +44,7 @@ class EntrarController extends Controller
         $usuario = $request->get('usuario');
         $senha = $request->get('senha');
 
-        $user = new ModelsUser();
+        $user = new User();
         $dados = $user->where('usuario', $usuario)->where('senha', $senha)->get()->first();
 
         if (isset($dados)) {

@@ -30,24 +30,21 @@ class PerfilController extends Controller
 
     public function update(Request $request)
     {
-   
-
-         //$usuario->nome = $request->input('nome');
-        //$usuario->email = $request->input('email');
-        //$usuario->usuario = $request->input('usuario');
-        //$usuario->senha = $request->input('senha');
-        //$usuario->setor = $request->input('setor');
-        //$usuario->ramal = $request->input('ramal');
-        //$usuario->codAnydesk = $request->input('codAnydesk');
         $idUsuario = 1;
-        $nome = $request->input('nome');
-        $email = $request->input('email');
-        $usuario = $request->input('usuario');
-        $senha = $request->input('senha');
-        $setor = $request->input('setor');
-        $ramal = $request->input('ramal');
-        $codAnydesk = $request->input('codAnydesk');
-        Perfil::updateOrCreate('UPDATE usuario SET nome = ?, email =?, usuario=?, senha=?,setor=?,ramal=?,codAnydesk=?  WHERE id = ?',[$nome, $email, $usuario, $senha, $setor, $ramal, $codAnydesk, $idUsuario]);
+        $usuario = Perfil::findOrFail($idUsuario);
+
+        $usuario->nome = $request->input('nome');
+        $usuario->email = $request->input('email');
+        $usuario->usuario = $request->input('usuario');
+        $usuario->senha = $request->input('senha');
+        $usuario->setor = $request->input('setor');
+        $usuario->ramal = $request->input('ramal');
+        $usuario->codAnydesk = $request->input('codAnydesk');
+
+        $usuario->update();
+        return view('solicitante.perfil.editar',  [
+            'usuario' => Perfil::findOrFail($idUsuario)
+        ] );
     }
 
 

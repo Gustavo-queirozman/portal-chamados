@@ -3,13 +3,60 @@
 namespace App\Http\Controllers\solicitante;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\User;
-use App\Models\Chamado;
+
+use App\Models\solicitante\Chamado;
 use Illuminate\Http\Request;
 
 
 class ChamadoController extends Controller
 {
+
+    public function create()
+    {
+        return view('solicitante.chamado.criar');
+    }
+
+    public function store(Request $request)
+    {
+        return Chamado::create([
+            'tipo' => 'tipo'
+        ]);
+    }
+
+    public function show()
+    {
+        /*
+        $idUsuario = 1;
+        $usuario = new User();
+        $dados = $usuario->where('idUsuario', $idUsuario)->get();
+        $dados->fill($dados);
+        var_dump($dados);
+        die();
+        return view('solicitante.perfil.editar', ['nome' => $nome, 'email' => $email, 'usuario' => $usuario, 'senha' => $senha, 'setor' => $setor, 'ramal' => $ramal, 'codAnydesk' => $codAnydesk]);
+        */
+    }
+
+    public function edit(Request $request)
+    {
+        $idUsuario = 1;
+        return view('solicitante.chamado.editar', [
+            'chamado' => Chamado::findOrFail($idUsuario)
+        ]);
+    }
+
+
+    public function update(Request $request)
+    {
+        $idChamado = 1;
+        $chamado = Chamado::findOrFail($idChamado);
+        $chamado->tipo = $request->input('tipo');
+        $chamado->update();
+        return view('solicitante.chamado.editar',  [
+            'chamado' => Chamado::findOrFail($idChamado)
+        ] );
+    }
+
+    /*
     public function getChamado()
     {
         session_start();
@@ -39,5 +86,5 @@ class ChamadoController extends Controller
 
         return redirect()->route('solicitante.chamado.index')
             ->with('success', 'Product created successfully.');
-    }
+    }*/
 }

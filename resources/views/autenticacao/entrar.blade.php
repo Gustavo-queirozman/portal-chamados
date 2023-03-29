@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <h1>Entrar</h1>
     <section class="vh-100">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -21,7 +20,7 @@
                     <img src="https://giu.unimed.coop.br/img/thumbnail_2-01.d1fca7ec.jpg" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form action="{{ route('entrar') }}" method="post">
+                    <form action="}" method="post">
                         @csrf
                         <div class="form-outline mb-4">
                             <input type="text" id="usuario" name="usuario" class="form-control form-control-lg" placeholder="Usuário" required value="{{ old('usuario') }}" />
