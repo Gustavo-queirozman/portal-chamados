@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('autenticacao.entrar');
 });
+
 Route::get('/entrar', function () {
     return view('autenticacao.entrar');
 });
-Route::post('/entrar', [App\Http\Controllers\autenticacao\EntrarController::class, 'get']);
+
+Route::post('/entrar', [App\Http\Controllers\autenticacao\EntrarController::class, 'entrar'])->name('entrar');
 
 
 
@@ -31,7 +33,7 @@ Route::post('/cadastro', [App\Http\Controllers\autenticacao\CadastroController::
 Route::get('/solicitarCadastro', function () {
     return view('autenticacao.solicitarCadastro');
 });
-Route::post('/solicitarCadastro', [App\Http\Controllers\autenticacao\solicitarCadastro::class, 'solicitarCadastro'])->name('solicitarCadastro');
+Route::post('/solicitarCadastro', [App\Http\Controllers\autenticacao\CadastroController::class, 'solicitarCadastro'])->name('solicitarCadastro');
 
 Route::get('/cadastro', function () {
     return view('autenticacao.cadastro');
