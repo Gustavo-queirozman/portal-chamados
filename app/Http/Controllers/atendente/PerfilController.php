@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class PerfilController extends Controller
 {
+    public function __construct()
+    {
+        
+    }
+    
     //
     public function getEditar()
     {

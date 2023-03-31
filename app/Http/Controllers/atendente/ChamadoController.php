@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ChamadoController extends Controller
 {
+    public function __construct()
+    {
+        
+    }
+    
     public function ver(){
         
     }

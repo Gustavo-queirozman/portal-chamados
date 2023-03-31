@@ -8,4 +8,8 @@ use Illuminate\Http\Request;
 class StatusController extends Controller
 {
     //
+    public function __construct()
+    {
+        
+    }
 }

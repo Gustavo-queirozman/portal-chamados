@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\LogMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,6 +51,10 @@ Route::get('/esqueciSenha', function () {
 });
 Route::post('/esqueciSenha', [App\Http\Controllers\autenticacao\EsqueciSenhaController::class, 'enviarNovaSenhaNoEmail'])->name('esqueciSenha');
 
+
+Route::middleware(LogMiddleware::class)
+    ->get('/', 'controller....')
+    ->name('sie.index');
 
 
 Route::prefix('solicitante')->group(function () {

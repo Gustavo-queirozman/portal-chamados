@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class MudarSenhaController extends Controller
 {
+    public function __construct()
+    {
+        
+    }
 
     public function index(){
         return "dgsgdsgs";

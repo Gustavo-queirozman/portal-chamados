@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class GestaoController extends Controller
 {
+
+    public function __construct()
+    {
+        
+    }
     public function ver(){
         
     }

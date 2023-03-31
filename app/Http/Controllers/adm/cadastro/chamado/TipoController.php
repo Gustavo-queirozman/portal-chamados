@@ -8,4 +8,8 @@ use Illuminate\Http\Request;
 class TipoController extends Controller
 {
     //
+    public function __construct()
+    {
+        
+    }
 }
